@@ -1,0 +1,25 @@
+version: '3'
+services:
+  database:
+    container_name: database
+    build: .
+    image: database
+    environment: 
+      MYSQL_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: kamin124712
+      MYSQL_DATABASE: CFANDB
+    volumes:
+      - "./scripts/CFANDB.sql:/docker-entrypoint-initdb.d/CFANDB.sql"
+      # - "./scripts/user_grant.sql:/docker-entrypoint-initdb.d/user_grant.sql"
+    ports:
+      - "3306:3306"
+    networks:
+      docker_network:
+        ipv4_address: 172.22.0.4
+
+networks:
+    default:
+      external:
+        name: allnetwork
+    docker_network:
+      external: true
