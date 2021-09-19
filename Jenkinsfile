@@ -5,9 +5,9 @@ pipeline {
 
         stage('stop and remove container, image') {
             steps {
-                sh 'docker stop frontend'
-                sh 'docker rm frontend'
-                sh 'docker image rm frontend'
+                sh 'docker stop database'
+                sh 'docker rm database'
+                sh 'docker image rm database'
             }
         }
 
