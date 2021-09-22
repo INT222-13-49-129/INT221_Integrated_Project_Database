@@ -7,7 +7,7 @@ services:
     environment: 
       MYSQL_ROOT_USER: root
       MYSQL_ROOT_PASSWORD: kamin124712
-      MYSQL_DATABASE: CFANDB
+      MYSQL_DATABASE: cfandb
     volumes:
       - "./scripts/CFANDB.sql:/docker-entrypoint-initdb.d/CFANDB.sql"
       # - "./scripts/user_grant.sql:/docker-entrypoint-initdb.d/user_grant.sql"
